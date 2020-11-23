@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
 
     def index
-        all_products = Product.all
-        puts "O"*60
+        @products = Product.all
     end
 end
