@@ -25,12 +25,12 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
         <div class="dropdown-menu">
-        <% if user_signed_in?%>
-          <a class="dropdown-item" href="#">Something else here</a>
-          <a class="dropdown-item" <%= link_to 'Se deconnecter', new_user_registration_path, method: :delete%></a>
+        <% if user_signed_in? %>
+         
+          <a class="dropdown-item" <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %> </a>
         <% else %>
-          <a class="dropdown-item" <%= link_to 'Se Connecter', user_session_path%></a>
-          <a class="dropdown-item" <%= link_to 'Creer un compte', new_user_registration_path%></a>
+          <a class="dropdown-item" href="/users/sign_up">S'inscrire</a>
+          <a class="dropdown-item" href="/users/sign_in ">Se connécter</a>
         <% end %>
         </div>
       </li>

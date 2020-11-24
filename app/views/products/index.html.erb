@@ -1,5 +1,49 @@
 <%= render "jumbotron" %>
 
+ <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="<%="/"%>">ProjetEventbrite</a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="<%=root_path%>">Les évènements <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">Creer ton évènement</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">Le concept?</a>
+                      </li>
+                    </ul>
+                </div>
+          <ul class="nav navbar-nav navbar-right" > 
+                <% if user_signed_in? %>
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Mon profil
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="<%=user_path(current_user)%>">Mon profil </a>
+                          <li class="dropdown-item"> <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %> </li>
+                    </div>
+                  </div>
+                <% else%>
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      S'inscrire / Se connecter
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="<%=new_user_registration_path%>">S'inscrire </a>
+                          <a class="dropdown-item" href="<%=new_user_session_path%>">Se connecter</a>
+                    </div>
+                  </div>
+                <% end %>
+            </ul>
+        </nav>
+
+
+
+
 <div class='container '>
   <h1>Les Produits</h1>
   <div class='card-columns ' >
