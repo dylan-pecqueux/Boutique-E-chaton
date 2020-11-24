@@ -1,1 +1,22 @@
-<h1>Ici on affiche tous les produits </h1>
+
+<div class='container '>
+  <h1>Les Produits</h1>
+  <div class='card-columns ' >
+  <% @products.each do |product|%>		<div class="card text-center d-justify-content-aline">
+    <div class="card-body">
+      <h5 class="card-title">Nom: <%= product.title%></h5>
+      <p class="card-text">
+        <%= product.description%>
+      </p>
+      <a class="btn btn-primary " <%= link_to "Ajouter au panier", line_items_path(product_id: product.id), method: 'POST' %></a>	
+    </div>
+        <div class="card-footer text-muted">
+          <%= product.price %> €
+        </div>
+      </div>
+    <% end %> 
+    </div>
+  </div>
+
+</div>
+
