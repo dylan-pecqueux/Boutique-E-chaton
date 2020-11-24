@@ -3,10 +3,13 @@ class CartsController < ApplicationController
     before_action :authenticate_user!, only: [:show]
     before_action :check_user, only: [:show]
 
+
+    def index 
+        @carts = Cart.all
+    end
+
     def create
-        if current_user.carts.length == 0
-            @cart = Cart.create(user: current_user)
-        end
+        @cart = Cart.create(user: current_user)
     end
 
     def show
