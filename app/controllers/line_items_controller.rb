@@ -9,15 +9,11 @@ class LineItemsController < ApplicationController
     def create
         product = Product.find(params[:product_id])
         @line_item = @cart.add_product(product)
-
+        
         if @line_item.save 
-            redirect_to products_path
+            redirect_to @cart, success: "vous avez ajouté #{product.title} avec succès"
+        else
+            redirect_to '/'
         end
-    end
-
-    private
-
-    def line_item_params
-        params.require(:line_item).permit(:product_id, :cart_id, :quantity)
     end
 end
