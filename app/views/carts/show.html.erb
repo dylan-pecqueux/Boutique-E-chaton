@@ -1,11 +1,17 @@
+<h2>Panier</h2>
+<%cart= Cart.find(params[:id]) %>
+<% products= cart.products %>
 <ul>
-    <li> 
-        <% @cart.products.each do |product|%> 
-            <%= product.title%>
-            <%= product.description%>
-        <% end %>
-    
-    </li>
-    
 
+  <% products.each do |p| %>
+    <li><%= p.title %></li>
+    <%end%> 
 </ul>
+
+<div>
+<button type="button" class="btn btn-success">Payer</button>
+</div>
+
+<div>
+<button type="button" class="btn btn-success">Retour aux produits</button>
+</div>
