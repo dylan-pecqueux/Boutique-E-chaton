@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-	protect_from_forgery with: :exeption
+	#protect_from_forgery with: :exeption
 
 	before_action :configure_devise_parameters, if: :devise_controller?
 
