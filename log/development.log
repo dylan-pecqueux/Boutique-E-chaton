@@ -1239,3 +1239,88 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 75ms (Views: 69.8ms | ActiveRecord: 4.1ms)
 
 
+Started GET "/" for ::1 at 2020-11-24 17:33:34 +0100
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/dylanpecqueux/.rvm/gems/ruby-2.7.1/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/_jumbotron.html.erb (525.1ms)
+  [1m[36mProduct Load (26.6ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (634.0ms)
+  Rendered layouts/_navbar.html.erb (3.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 859ms (Views: 792.0ms | ActiveRecord: 42.3ms)
+
+
+Started GET "/" for ::1 at 2020-11-24 17:34:19 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/_jumbotron.html.erb (10.4ms)
+  [1m[36mProduct Load (20.8ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (36.4ms)
+  Rendered layouts/_navbar.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 140ms (Views: 115.6ms | ActiveRecord: 20.8ms)
+
+
+Started GET "/" for ::1 at 2020-11-24 17:34:43 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/_jumbotron.html.erb (5.4ms)
+  [1m[36mProduct Load (30.4ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (38.6ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 108ms (Views: 74.9ms | ActiveRecord: 30.4ms)
+
+
+Started GET "/" for ::1 at 2020-11-24 17:34:50 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/_jumbotron.html.erb (3.9ms)
+  [1m[36mProduct Load (16.0ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (25.5ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 86ms (Views: 66.7ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-24 17:35:03 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/_jumbotron.html.erb (4.4ms)
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (9.8ms)
+  Rendered layouts/_navbar.html.erb (1.9ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 65ms (Views: 62.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-11-24 17:35:09 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/_jumbotron.html.erb (4.3ms)
+  [1m[36mProduct Load (25.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (36.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 88ms (Views: 61.5ms | ActiveRecord: 25.2ms)
+
+
+Started GET "/" for ::1 at 2020-11-24 17:36:30 +0100
+Processing by ProductsController#index as HTML
+  Rendering products/index.html.erb within layouts/application
+  Rendered layouts/_navbar.html.erb (2.3ms)
+  Rendered products/_jumbotron.html.erb (9.0ms)
+  [1m[36mProduct Load (24.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (39.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 105ms (Views: 79.7ms | ActiveRecord: 24.1ms)
+
+
