@@ -18,18 +18,18 @@ lineitems = []
 carts = []
 users = []
 
-10.times do 
-    products << Product.create(title: Faker::Creature::Cat.name, description: Faker::Lorem.paragraph(sentence_count: 2), price: Faker::Commerce.price)
+10.times do
+products << Product.create(title: Faker::Creature::Cat.name, description: Faker::Lorem.paragraph(sentence_count: 2), price: Faker::Commerce.price)
 end
 
-3.times do 
-    users << User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Internet.password)
+3.times do
+users << User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Internet.password)
 end
 
-2.times do 
-    carts << Cart.create(user: users.sample)
+2.times do
+carts << Cart.create(user: users.sample)
 end
 
 5.times do |index|
-    lineitems << LineItem.create(cart: carts.sample, product: products.sample, quantity: rand(1..10))
+lineitems << LineItem.create(cart: carts.sample, product: products.sample, quantity: rand(1..10))
 end
