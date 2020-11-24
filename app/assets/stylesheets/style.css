@@ -1,0 +1,41 @@
+/* -----------------Form-------------------- */
+
+
+.simple_form {
+  width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto ;
+}
+
+.edit_form {
+  width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto ;
+}
+
+/* -----------------bannière-------------------- */
+
+.big-ban {
+  background-size: cover;
+  background-position-y: center;
+  display: flex;
+  height:400px ;
+  background-image: url(https://www.sciencesetavenir.fr/assets/img/2019/03/25/cover-r4x3w1000-5c98c40f5bf3d-cat-3535399-1920.jpg)
+}
+
+.sm-ban {
+  background-size: cover;
+  background-position-y: center;
+  display: flex;
+  height:300px ;
+  background-image: url(https://www.sciencesetavenir.fr/assets/img/2019/03/25/cover-r4x3w1000-5c98c40f5bf3d-cat-3535399-1920.jpg)
+}
+
+.title-ban {
+  color: white;
+  font-size: 5rem;
+}
+
+
