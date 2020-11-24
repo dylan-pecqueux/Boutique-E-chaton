@@ -16,4 +16,10 @@ class LineItemsController < ApplicationController
             redirect_to '/'
         end
     end
+
+    def destroy
+        @line_item = LineItem.find(params[:id])
+        @line_item.destroy
+        redirect_to '/', info: "Vous avez supprimer votre évènement avec succès"
+    end
 end
