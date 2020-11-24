@@ -11,6 +11,8 @@ class Cart < ApplicationRecord
     else
          item = line_items.new(product: product)
     end
+    return item
   end
 end
+
 

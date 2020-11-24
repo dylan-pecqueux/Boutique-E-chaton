@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-	#protect_from_forgery with: :exeption
+	add_flash_types :info, :error, :warning, :success, :notice, :danger
 
 	before_action :configure_devise_parameters, if: :devise_controller?
 
