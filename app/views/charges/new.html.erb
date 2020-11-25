@@ -13,7 +13,7 @@
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="A month's subscription"
-          data-amount= "<%= @cart.total%>"
+          data-amount= "<%= sprintf("%.2f",(@cart.total)).delete '.'.to_s %>"
           data-currency="eur"
           data-locale="auto"></script>
 <% end %>
