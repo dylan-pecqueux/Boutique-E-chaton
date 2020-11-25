@@ -1,40 +1,39 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="/">Cat Shop</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+  <a class="navbar-brand text-white" href="/"><span class="text-secondary">E</span>-chaton</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-  <div class="collapse navbar-collapse" id="navbarColor01">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home
-          <span class="sr-only">(current)</span>
-        </a>
-      </li>
+  <div class="collapse navbar-collapse " id="navbarColor03">
+    <ul class="navbar-nav navbar-center">
       
-      <li class="nav-item">
-        <a class="nav-link" <%= link_to 'Nouveau produit', new_product_path%></a>
-      </li>
-     
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li>
+    </ul>
+
+
+    <ul class="navbar-nav ml-auto">
+    <% if user_signed_in?%>
+      <li class="ml-auto p-2 text-secondary"><small> Connecté avec l'email : <%=current_user.email%></small></li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-        <div class="dropdown-menu">
-        <% if user_signed_in? %>
-         
-          <a class="dropdown-item" <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete %> </a>
-        <% else %>
-          <a class="dropdown-item" href="/users/sign_up">S'inscrire</a>
-          <a class="dropdown-item" href="/users/sign_in ">Se connécter</a>
-        <% end %>
+        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profil/Quitter</a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item bg-primary" <%= link_to "Sign out", destroy_user_session_path, method: :delete %></a>
+          <a class="dropdown-item" <%= link_to "Profil", user_path(current_user) %></a>
         </div>
       </li>
+<<<<<<< HEAD
     </ul>
     
   </div>
 </nav>
+=======
+      <% else %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Se Connecter/S'inscrire</a>
+        <div class="dropdown-menu menu-nav" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item menu-nav text-white" href="<%=new_user_session_path%>">Se connecter</a>
+          <a class="dropdown-item menu-nav text-white" href="<%=new_user_registration_path%>">S'inscrire</a>
+        </div>
+    </ul> 
+    <% end %>
+    </div>
+</nav>
+>>>>>>> debdae17317fd5242d6e428cd34a815927287ec9

@@ -8,18 +8,12 @@
   
 }
 
-.text{
-  display: flex;
-  justify-content: center;
-  align-self: flex-end;
-  
-}
-
-#titre{
-
-  font-size: 50px;
-  position: absolute;
+.pos-alert{
+  position: sticky;
+  max-width: 100%;
   z-index: 23;
+  left: 10%;
+  top: 10%;
 }
 
 .stick{

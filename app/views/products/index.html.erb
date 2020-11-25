@@ -1,5 +1,6 @@
 <%= render "jumbotron" %>
 
+<<<<<<< HEAD
  <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="<%="/"%>">ProjetEventbrite</a>
@@ -57,10 +58,30 @@
     </div>
         <div class="card-footer text-muted">
           <%= product.price %> €
+=======
+  <section>
+  
+    <div id="product-all" class="text-center pt-5">
+      <h1 class="p-5" style="font-size: 60px;">Nos photos</h1>
+      <div id="product-align">
+      <% @products.each do |product| %>
+      <div class="card mb-5" id="card-product">
+        <%= image_tag product.image, alt: 'cat-image', class: "card-img-top card-img"%>
+        <div class="card-body">
+          <h5 class="card-title">Nom: <%= product.title%></h5>
+          <p class="text-primary"> <%= product.description %></p>
+          <h4 class="card-text text-danger"><%= product.price %> €</h4>
+          <div class="bot-button">
+          <%= link_to "Ajouter au panier", line_items_path(product_id: product.id), method: 'POST', class: "btn btn-secondary" %>
+          <%= link_to "Voir le produit", product_path(product), class: "btn btn-primary mt-3" %>
+          </div>
+>>>>>>> debdae17317fd5242d6e428cd34a815927287ec9
         </div>
       </div>
-    <% end %> 
+      <% end %>
     </div>
-  </div>
+      
+    </div>
+    
+  </section>
 
-</div>
