@@ -32,6 +32,7 @@ gem 'simple_form_fancy_uploads'
 gem 'devise'
 gem 'activerecord-reset-pk-sequence'
 gem 'stripe'
+gem "mini_magick"
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
