@@ -53,7 +53,7 @@
       <p class="card-text">
         <%= product.description%>
       </p>
-      <a class="btn btn-primary " <%= link_to "Ajouter au panier", line_items_path(product_id: product.id), method: 'POST' %></a>	
+      <a class="btn btn-primary " <%= link_to "Voir le matou", product_path(product.id)%></a>	
     </div>
         <div class="card-footer text-muted">
           <%= product.price %> €
