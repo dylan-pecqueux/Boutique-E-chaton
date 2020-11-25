@@ -1,6 +1,7 @@
 class LineItemsController < ApplicationController
     include CurrentCart
     before_action :set_cart, only: [:create]
+    before_action :authenticate_user!, only: [:new,:create, :destroy]
 
     def new
         @line_item = LineItem.new
@@ -11,7 +12,7 @@ class LineItemsController < ApplicationController
         @line_item = @cart.add_product(product)
         
         if @line_item.save 
-            redirect_to @cart, success: "vous avez ajouté #{product.title} avec succès"
+            redirect_to '/', success: "vous avez ajouté #{product.title} avec succès"
         else
             redirect_to '/'
         end
@@ -20,6 +21,6 @@ class LineItemsController < ApplicationController
     def destroy
         @line_item = LineItem.find(params[:id])
         @line_item.destroy
-        redirect_to '/', info: "Vous avez supprimer votre évènement avec succès"
+        redirect_to @line_item.cart, info: "Vous avez supprimer votre produit avec succès"
     end
 end
