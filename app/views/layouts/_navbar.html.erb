@@ -6,12 +6,15 @@
   <div class="collapse navbar-collapse " id="navbarColor03">
     <ul class="navbar-nav navbar-center">
       
+
     </ul>
 
 
     <ul class="navbar-nav ml-auto">
     <% if user_signed_in?%>
-      <li class="ml-auto p-2 text-secondary"><small> Connecté avec l'email : <%=current_user.email%></small></li>
+      <% if current_user.carts[0] %>
+      <li class="ml-auto p-2 text-secondary"><%= link_to ('<p>votre panier<i class="fas fa-shopping-cart"></i></p>').html_safe, cart_path(current_user.carts[0]) ,class:"text-secondary" %></li>
+      <% end %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profil/Quitter</a>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
