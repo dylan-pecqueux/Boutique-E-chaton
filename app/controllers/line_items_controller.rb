@@ -1,6 +1,7 @@
 class LineItemsController < ApplicationController
     include CurrentCart
     before_action :set_cart, only: [:create]
+    before_action :authenticate_user!, only: [:new,:create, :destroy]
 
     def new
         @line_item = LineItem.new
