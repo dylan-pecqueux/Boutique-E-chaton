@@ -16,7 +16,7 @@
                     <tbody>
                     <% @cart.line_items.each do |p| %>
                         <tr>
-                            <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
+                            <td><%= image_tag p.product.image, alt: 'cat-image', class: "card-img-top card-img w-25"  %> </td>
                             <td><%= p.product.title%></td>
                             <td>In stock</td>
                             <td><input class="form-control" type="text" value="<%= p.quantity%>" /></td>
