@@ -24,6 +24,46 @@
           <div class="container my-4">
             <p><span class="text-primary">Email : </span><%= @user.email %></p>
           </div>
+          
+          <div class="container my-4">
+            <h3 class="pb-5"><span class="text-primary"><strong>Vos précedents achats</strong></span></h3>
+
+            <% current_user.carts.each_with_index do |c, index| %>
+           
+            <% if current_user.carts.last != c %>
+            <h4> Commande numero <%= @order[index].id %></h4>
+          <table class="table table-striped shadow-lg p-3 mb-5 bg-white rounded">
+                    <thead>
+                        <tr>
+                            <th scope="col">Produit</th>
+                            <th scope="col">Disponible</th>
+                            <th scope="col" class="text-center">Quantité</th>
+                            <th scope="col" class="text-center">Prix</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <% c.line_items.each do |p| %>
+                        <tr>
+                            <td><%= p.product.title%></td>
+                            <td>In stock</td>
+                            <td><strong><%= p.quantity%></strong></td>
+                            <td><%= p.total%> €</td>
+                        </tr>
+                    <% end %>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td ><strong>Total: <%= c.total%> €</strong></td>
+                        
+                        </tr>
+                    </tbody>
+                </table>
+                <% end %>
+              <br>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
