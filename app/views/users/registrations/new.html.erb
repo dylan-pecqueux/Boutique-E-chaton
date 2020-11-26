@@ -1,12 +1,13 @@
-<%= render 'layouts/navbar'%>
+<%= render 'layouts/navbar2'%>
 <%= render 'shared/ban'%>
-<div class="container">
-  <h2 class="p-5">Sign up</h2>
 
+<div class="container mb-5">
+  
   <%= simple_form_for(resource, as: resource_name, :html=> { class: 'foobarbaz' }, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
     <div class="form-inputs">
+    <h2 class="p-5">S'inscrire</h2>
       <%= f.input :first_name,
                   required: true,
                   autofocus: true,
@@ -32,8 +33,7 @@
       <%= f.button :submit, "Sign up",:class => 'btn btn-primary' %>
     </div>
 
-  <% end %>
-
   <%= render "users/shared/links" %>
-
+  <% end %>
 </div>
+<%= render 'layouts/footer'%>

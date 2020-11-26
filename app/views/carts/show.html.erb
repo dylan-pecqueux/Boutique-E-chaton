@@ -1,3 +1,9 @@
+<header>
+  <%= render 'layouts/navbar2'%>
+</header>
+
+<main>
+
 
 <%= render 'shared/ban' %>
 
@@ -13,14 +19,14 @@
                             <th scope="col">Product</th>
                             <th scope="col">Available</th>
                             <th scope="col" class="text-center">Quantity</th>
-                            <th scope="col" class="text-right">Price</th>
+                            <th scope="col" class="text-right" style="width: 100px;">Price</th>
                             <th> </th>
                         </tr>
                     </thead>
                     <tbody>
                     <% @cart.line_items.each do |p| %>
                         <tr>
-                            <td><%= image_tag p.product.image, alt: 'cat-image', class: "card-img-top card-img w-25"  %> </td>
+                            <td><%= image_tag p.product.image, alt: 'cat-image', class: "card-img-top card-img"  %> </td>
                             <td><%= p.product.title%></td>
                             <td>In stock</td>
                             <td><input class="form-control" type="text" value="<%= p.quantity%>" /></td>
@@ -48,9 +54,13 @@
                     <%= link_to 'Continuer le shopping', products_path, class: 'btn btn-block btn-light'%>
                 </div>
                 <div class="col-sm-12 col-md-6 text-right">
-                    <%= link_to 'Acheter', new_cart_charge_path(@cart), class: "btn btn-lg btn-block btn-success text-uppercase"%>
+                    <%= link_to 'Confirmer la commande', new_cart_charge_path(@cart), class: "btn btn-lg btn-block btn-success "%>
                 </div>
             </div>
         </div>
     </div>
 </div>
+</main>
+
+
+  <%= render 'layouts/footer'%>
