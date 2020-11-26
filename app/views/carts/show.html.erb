@@ -1,7 +1,9 @@
 <header>
-<%= render 'layouts/navbar'%>
+  <%= render 'layouts/navbar2'%>
 </header>
-<div class="container mb-4 mt-5">
+
+<main>
+<div class="container mb-4 my-5 content-cart">
     <div class="row">
         <div class="col-12">
             <div class="table-responsive">
@@ -47,13 +49,13 @@
                     <%= link_to 'Continuer le shopping', products_path, class: 'btn btn-block btn-light'%>
                 </div>
                 <div class="col-sm-12 col-md-6 text-right">
-                    <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                    <%= link_to 'Acheter', new_cart_charge_path(@cart), class: "btn btn-lg btn-block btn-success text-uppercase"%>
                 </div>
             </div>
         </div>
     </div>
 </div>
+</main>
 
-<footer>
-<%= render 'layouts/footer'%>
-</footer>
+
+  <%= render 'layouts/footer'%>

@@ -16,11 +16,12 @@ class CartsController < ApplicationController
 
     def destroy
         @cart = Cart.find(params[:id])
-        @items = LineItems.where(cart: @cart)
+        @items = LineItem.where(cart: @cart)
         @items.each do |item|
             item.destroy
         end
         @cart.destroy
+        redirect_to '/products'
     end
 
     private 
