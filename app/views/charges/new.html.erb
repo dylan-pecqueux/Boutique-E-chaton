@@ -1,19 +1,71 @@
-<%= form_tag cart_charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Montant à payer : <%= @cart.total %></span>
-    </label>
-  </article>
+<%= render 'shared/ban' %>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount= "<%= sprintf("%.2f",(@cart.total)).delete '.'.to_s %>"
-          data-currency="eur"
-          data-locale="auto"></script>
-<% end %>
+
+<%# ------- module de paiement --------- %>
+
+<div class="container px-5 m-5">
+  <div class="row">
+    <div class="col-6">
+      <h3> Récapitulatif </h3>
+      <div class="table-responsive">
+          <table class="table table-striped">
+              <thead>
+                  <tr>
+                      <th scope="col">Product</th>
+                      <th scope="col">Available</th>
+                      <th scope="col" class="text-center">Quantity</th>
+                      <th scope="col" class="text-right">Price</th>
+                  </tr>
+              </thead>
+              <tbody>
+              <% @cart.line_items.each do |p| %>
+                  <tr>
+                      <td><%= p.product.title%></td>
+                      <td>In stock</td>
+                      <td><input class="form-control" type="text" value="<%= p.quantity%>" /></td>
+                      <td class="text-right"><%= p.total%> €</td>
+                      <td class="text-right">
+                      </td>
+                  </tr>
+              <% end %>
+              </tbody>
+          </table>
+      </div>
+    </div>
+
+    <div class="col-6" style="display:flex; align-items: center;">
+        <%= form_tag cart_charges_path do %>
+          <article>
+            <% if flash[:error].present? %>
+              <div id="error_explanation">
+                <p><%= flash[:error] %></p>
+              </div>
+            <% end %>
+            <label class="amount">
+              <span><h4>Montant à payer : <%= @cart.total %></h4></span>
+            </label>
+          </article>
+
+          <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                  data-description="A month's subscription"
+                  data-amount= "<%= sprintf("%.2f",(@cart.total)).delete '.'.to_s %>"
+                  data-currency="eur"
+                  data-locale="auto"></script>
+        <% end %>
+    </div>
+  </div>
+</div>
+
+<%# ------- paiement securisé --------- %>
+
+
+  <div class="container px-5 m-5">
+    <div class="row">
+        <div class="col" style="display:flex; justify-content:center">
+          <img src="https://www.argent-tres-facile.com/wp-content/uploads/2018/12/paiement-securise-garantie.png">
+        <div>
+      </div>
+    </div>
+  </div>
+</div>
