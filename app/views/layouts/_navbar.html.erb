@@ -11,6 +11,11 @@
 
 
     <ul class="navbar-nav ml-auto">
+    <% if current_user && current_user.is_admin == true%>
+    <li class="nav-item active">
+      <a class="nav-link" <%= link_to 'Dashboard Admin', admin_orders_path%></a>
+    </li>
+    <% end %>
     <% if user_signed_in?%>
       
       <li class="nav-item dropdown">

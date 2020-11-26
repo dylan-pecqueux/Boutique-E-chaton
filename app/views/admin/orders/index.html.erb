@@ -1,0 +1,76 @@
+
+<%= render "sidebar"%>
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
+
+                       
+                            <div class="container-fluid">
+																<div class="container m-5">
+																	<div class="row">
+																		<div class="col-12">
+																				<div class="table-responsive">
+																						<table class="table table-striped">
+																								<thead>
+																										<tr>
+																											<th scope="col"> </th>
+																											<th scope="col"> Utilisateurs</th>
+																											<th scope="col">Produits</th>
+																											<th scope="col" class="text-center">Quantité</th>
+																											<th scope="col" class="text-center">Prix</th>
+																										</tr>
+																								</thead>
+																								<tbody>
+																								<% @orders.each do |order|%> 
+																												
+																													
+																											
+																												<% order.user.carts[0].line_items.each do |p| %>
+																													<tr>
+																														<td></td>
+																														<td><%= order.user.first_name%></td>
+																														<td><%= p.product.title%></td>
+																														<td class="text-center"><%= p.quantity%> </td>
+																														<td class='text-center'><%= p.total%>€</td>
+																													</tr>
+																												<% end %>
+																										
+																								<% end %>
+																										
+																								</tbody>
+																						</table>
+																				</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+                        </div>
+
+                        
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            
+        </div>
+        
+    </div>
+   
+
+
+
+
+
+
+
+
+
+

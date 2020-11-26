@@ -15,3 +15,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 
 Rails.application.config.assets.paths << Rails.root.join("vendor", "assets", "stylesheets")
 Rails.application.config.assets.paths << Rails.root.join("vendor", "assets", "javascripts")
+Rails.application.config.assets.paths << Rails.root.join("vendor", "assets", "fontawsome-free")
+Rails.application.config.assets.paths << Rails.root.join("vendor", "assets", "jquery")

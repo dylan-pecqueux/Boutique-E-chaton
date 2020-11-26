@@ -1,0 +1,26 @@
+<%= render 'shared/ban'%>
+<%= render 'sidebar' %>
+<div class="container mb-5">
+
+  <%= simple_form_for @product, :url => admin_products_path do |f| %>
+  <h2 class="p-5">Nouveau Produit</h2>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :title,
+                  autofocus: true,
+                  input_html: { autocomplete: "Nom du produit" }%>
+      <%= f.input :description,
+                  input_html: { autocomplete: "Description" }%>
+      <%= f.input :price,
+                  input_html: { autocomplete: "Prix" }%>
+      <%= f.input :image, as: :file %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Créer",:class => 'btn btn-primary' %>
+    </div>
+
+  <% end %>
+
+</div>

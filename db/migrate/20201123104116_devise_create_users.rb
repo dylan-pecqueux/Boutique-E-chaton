@@ -34,6 +34,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
       t.string :first_name, null: false
       t.string :last_name,  null: false
+      t.boolean :is_admin,  null: false, default: false
 
       t.timestamps null: false
     end
