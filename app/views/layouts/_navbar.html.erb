@@ -6,6 +6,7 @@
   <div class="collapse navbar-collapse " id="navbarColor03">
     <ul class="navbar-nav navbar-center">
       
+
     </ul>
 
 
@@ -20,7 +21,7 @@
         </div>
       </li>
       <% if current_user.carts[0] %>
-        <li class="mx-3 pt-2 text-secondary"><%= link_to ('<i class="fas fa-shopping-cart fa-lg"></i>').html_safe, cart_path(current_user.carts[0]) ,class:"text-secondary" %></li>
+        <li class="mx-3 pt-2 text-secondary"><%= link_to ('<i class="fas fa-shopping-cart fa-lg"></i>').html_safe, cart_path(current_user.carts.last) ,class:"text-secondary" %></li>
       <% end %>
       <% else %>
       <li class="nav-item dropdown">
