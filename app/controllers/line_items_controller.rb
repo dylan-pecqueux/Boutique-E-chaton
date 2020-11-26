@@ -12,7 +12,7 @@ class LineItemsController < ApplicationController
         @line_item = @cart.add_product(product)
         
         if @line_item.save 
-            redirect_to '/', success: "vous avez ajouté #{product.title} avec succès"
+            redirect_to @cart, success: "vous avez ajouté #{product.title} avec succès"
         else
             redirect_to '/'
         end
