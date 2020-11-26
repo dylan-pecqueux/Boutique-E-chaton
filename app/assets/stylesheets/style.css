@@ -50,18 +50,19 @@
   font-size: 5rem;
 }
 
-.sm-ban-pay {
-  background-size: cover;
-  background-position-y: center;
-  display: flex;
-  height:450px ;
-  font-size: 25px;
-  background-image: url(Chatons.jpg)
+/* -----------------Stripe Button-------------------- */
+
+
+.stripe-button-el span {
+  background: purple !important;
+  background-image:none !important;
+  background-color: purple !important;
+  border-color: purple !important;
+  padding: 0px
 }
 
-.sm-ban-pay h3{
-  
-  font-size: 62px;
-  color: antiquewhite;
+
+.stripe-button {
+  content:""
 }
 

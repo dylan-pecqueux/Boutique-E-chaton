@@ -5,9 +5,9 @@ Rails.application.routes.draw do
 
   resources :products
   resources :line_items
-  resources :carts do
-    resources :charges, only: [:create, :new]
+  resources :carts, path: :mon_panier do
+    resources :charges, only: [:create, :new], path: :paiement
   end
-  resources :users
+  resources :users, path: :mon_profil
 
 end
