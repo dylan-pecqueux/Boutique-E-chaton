@@ -1,60 +1,74 @@
 
+<%= render "sidebar"%>
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
 
+            <!-- Main Content -->
+            <div id="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6 mb-4">
 
+                       
+                            <div class="container-fluid">
+																<div class="container m-5">
+																	<div class="row">
+																		<div class="col-12">
+																				<div class="table-responsive">
+																						<table class="table table-striped">
+																								<thead>
+																										<tr>
+																											<th scope="col"> </th>
+																											<th scope="col">Produits</th>
+																											<th scope="col" class="text-center">Quantité</th>
+																											<th scope="col" class="text-right">Prix</th>
+																										</tr>
+																								</thead>
+																								<tbody>
+																								<% @orders.each do |order|%> 
+																												
+																													<h3>User: <%= order.user.first_name%></h3>
+																											
+																												<% order.user.carts[0].line_items.each do |p| %>
+																													<tr>
+																														<td>Product image </td>
+																														<td><%= p.product.title%></td>
+																														<td class="text-center"><%= p.quantity%> </td>
+																														<td class='text-right'><%= p.total%>€</td>
+																													</tr>
+																												<% end %>
+																										
+																								<% end %>
+																										
+																								</tbody>
+																						</table>
+																				</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
 
+                        </div>
 
+                        
+                    </div>
 
-
-
-<div class="container mb-4">
-    <div class="row">
-        <div class="col-12">
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col"> </th>
-                            <th scope="col">Product</th>
-                            <th scope="col" class="text-center">Quantity</th>
-                            <th scope="col" class="text-right">Price</th>
-                            <th scope="col" class="text-right">Price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <% @orders.each do |order|%>
-                    <%= order%>
-                        <tr>
-                            <td>Product image </td>
-                            <td></td>
-                            <td><input class="form-control" type="text" value="" /></td>
-                            <td class="text-right"> €</td>
-                            <td class="text-right"> €</td>
-                            <td class="text-right">
-                                DELETE Button 
-                            </td>
-                        </tr>
-                    <% end %>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><strong>Total</strong></td>
-                            <td class="text-right"><strong>TOTAL Price </strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="col mb-2">
-            <div class="row">
-                <div class="col-sm-12  col-md-6">
-                    <%= link_to 'Continuer le shopping',  class: 'btn btn-block btn-light'%>
                 </div>
-                <div class="col-sm-12 col-md-6 text-right">
-                    <%= link_to 'Acheter', class: "btn btn-lg btn-block btn-success text-uppercase"%>
-                </div>
+                <!-- /.container-fluid -->
+
             </div>
+            
         </div>
+        
     </div>
-</div>
+   
+
+
+
+
+
+
+
+
+
+

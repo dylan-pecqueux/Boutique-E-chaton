@@ -25,7 +25,7 @@ users = []
 User.create!(
     first_name: "Admin",
     last_name: "Admin",
-    email: "admin@yopmail.com",
+    email: "admin-chaton@yopmail.com",
     password: 'azerty',
     is_admin: true
 )
