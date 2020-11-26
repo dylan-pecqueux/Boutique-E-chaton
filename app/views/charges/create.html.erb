@@ -2,5 +2,5 @@
 
 <h4> Vous avez payez <strong> <%= @cart.total %> €</strong>! </h4>
 
- <%= link_to "Retour à la page d'acceuil", cart_path(@cart), method: 'DELETE', class: 'btn btn-block btn-light'%> 
+ <%= link_to "Retour à la page d'acceuil", carts_path, method: :post, class: 'btn btn-block btn-light'%> 
 
