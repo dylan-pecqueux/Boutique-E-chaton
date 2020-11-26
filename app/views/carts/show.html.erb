@@ -1,4 +1,7 @@
-<div class="container mb-4">
+<header>
+<%= render 'layouts/navbar'%>
+</header>
+<div class="container mb-4 mt-5">
     <div class="row">
         <div class="col-12">
             <div class="table-responsive">
@@ -9,14 +12,14 @@
                             <th scope="col">Product</th>
                             <th scope="col">Available</th>
                             <th scope="col" class="text-center">Quantity</th>
-                            <th scope="col" class="text-right">Price</th>
+                            <th scope="col" class="text-right" style="width: 100px;">Price</th>
                             <th> </th>
                         </tr>
                     </thead>
                     <tbody>
                     <% @cart.line_items.each do |p| %>
                         <tr>
-                            <td><%= image_tag p.product.image, alt: 'cat-image', class: "card-img-top card-img w-25"  %> </td>
+                            <td><%= image_tag p.product.image, alt: 'cat-image', class: "card-img-top card-img"  %> </td>
                             <td><%= p.product.title%></td>
                             <td>In stock</td>
                             <td><input class="form-control" type="text" value="<%= p.quantity%>" /></td>
@@ -50,3 +53,7 @@
         </div>
     </div>
 </div>
+
+<footer>
+<%= render 'layouts/footer'%>
+</footer>
