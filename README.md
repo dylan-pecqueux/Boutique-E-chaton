@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Site Boutique de Chatons
 
-Things you may want to cover:
+Accédez à notre site sur :
+https://projet-e-chaton.herokuapp.com/
 
-* Ruby version
+Accédez à l'interface admin en utilisant les log suivant :
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+        email: "admin-chaton@yopmail.com"
+        password: azerty

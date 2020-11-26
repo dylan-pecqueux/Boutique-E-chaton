@@ -28,6 +28,7 @@
             <h3><%= @product.title %></h3>
             <h1> Description: </h1>
             <h3><%= @product.description %></h3>
+            <a class="nav-link btn btn-primary" <%= link_to 'Editer le produit', edit_admin_product_path(@product)%></a>
             <br>
           </div>
           </div>

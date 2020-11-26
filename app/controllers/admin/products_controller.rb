@@ -1,6 +1,6 @@
 class Admin::ProductsController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_product, only: [:show, :edit, :destroy]
+    before_action :set_product, only: [:show, :edit, :update, :destroy]
     before_action :is_admin
 
     def index
@@ -25,6 +25,14 @@ class Admin::ProductsController < ApplicationController
     end
 
     def edit
+    end
+
+    def update
+     
+        @product = Product.update(product_params)
+        if @product.update
+            redirect_to admin_orders_path
+        end
     end
 
     def destroy

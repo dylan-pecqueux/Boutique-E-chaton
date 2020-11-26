@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" id="navbar">
   <a class="navbar-brand text-white" href="/"><span class="text-secondary">E</span>-chaton</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -10,19 +10,17 @@
 
 
     <ul class="navbar-nav ml-auto">
-      <li class="ml-auto p-2 text-secondary"><small> Connecté avec l'email : <%=current_user.email%></small></li>
+      <li class="nav-item active">
+        <a class="nav-link" <%= link_to 'Dashboard Accueil', admin_orders_path%></a>
+    </li>
+    
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profil/Quitter</a>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="nav-link" <%= link_to 'Acceuil', admin_orders_path%></a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Se Connecter/S'inscrire</a>
+        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gerer les Produits</a>
         <div class="dropdown-menu menu-nav" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item menu-nav text-white" href="<%=new_user_session_path%>">Se connecter</a>
-          <a class="dropdown-item menu-nav text-white" href="<%=new_user_registration_path%>">S'inscrire</a>
+          <a class="dropdown-item menu-nav text-white" href="<%=admin_products_path%>">Vos produits</a>
+          <a class="dropdown-item menu-nav text-white" href="<%=new_admin_product_path%>">Nouveau produit</a>
+        <a class="dropdown-item menu-nav text-white" <%= link_to "Sign out", destroy_user_session_path, method: :delete %></a>
         </div>
     </ul> 
-    </div>
+  </div>
 </nav>

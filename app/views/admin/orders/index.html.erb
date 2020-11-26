@@ -19,22 +19,24 @@
 																								<thead>
 																										<tr>
 																											<th scope="col"> </th>
+																											<th scope="col"> Utilisateurs</th>
 																											<th scope="col">Produits</th>
 																											<th scope="col" class="text-center">Quantité</th>
-																											<th scope="col" class="text-right">Prix</th>
+																											<th scope="col" class="text-center">Prix</th>
 																										</tr>
 																								</thead>
 																								<tbody>
 																								<% @orders.each do |order|%> 
 																												
-																													<h3>User: <%= order.user.first_name%></h3>
+																													
 																											
 																												<% order.user.carts[0].line_items.each do |p| %>
 																													<tr>
-																														<td>Product image </td>
+																														<td></td>
+																														<td><%= order.user.first_name%></td>
 																														<td><%= p.product.title%></td>
 																														<td class="text-center"><%= p.quantity%> </td>
-																														<td class='text-right'><%= p.total%>€</td>
+																														<td class='text-center'><%= p.total%>€</td>
 																													</tr>
 																												<% end %>
 																										
