@@ -1,14 +1,7 @@
-<header>
-  <%= render 'layouts/navbar2'%>
-</header>
 
-<main>
-
-
-<%= render 'shared/ban' %>
-
-<div class="container mb-4 p-5">
-  <h3> Récapitulatif de votre commande </h3>
+<%= render 'layouts/navbar'%>
+<%= render 'shared/ban'%>
+<div class="container mb-4">
     <div class="row">
         <div class="col-12">
             <div class="table-responsive">
@@ -16,10 +9,10 @@
                     <thead>
                         <tr>
                             <th scope="col"> </th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Available</th>
-                            <th scope="col" class="text-center">Quantity</th>
-                            <th scope="col" class="text-right" style="width: 100px;">Price</th>
+                            <th scope="col">Produit</th>
+                            <th scope="col">Disponible</th>
+                            <th scope="col" class="text-center">Quantité</th>
+                            <th scope="col" class="text-right" style="width: 100px;">Prix</th>
                             <th> </th>
                         </tr>
                     </thead>
@@ -28,7 +21,7 @@
                         <tr>
                             <td><%= image_tag p.product.image, alt: 'cat-image', class: "card-img-top card-img"  %> </td>
                             <td><%= p.product.title%></td>
-                            <td>In stock</td>
+                            <td>En stock</td>
                             <td><input class="form-control" type="text" value="<%= p.quantity%>" /></td>
                             <td class="text-right"><%= p.total%> €</td>
                             <td class="text-right">
