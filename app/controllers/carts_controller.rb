@@ -8,6 +8,7 @@ class CartsController < ApplicationController
 
     def create
         @cart = Cart.create(user: current_user)
+        redirect_to '/products'
     end
 
     def show
