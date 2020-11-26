@@ -11,7 +11,7 @@ class AdminMailer < ApplicationMailer
 
   
     # # # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
-    mail(to:'admin-chaton@yopmail.com', subject: 'Une nouvelle commande sur e-chaton.fr !') 
+    mail(to:'admin-chaton@yopmail.com', subject: 'Une nouvelle commande sur e-chaton.fr !')
   end
 
 end
