@@ -1,0 +1,71 @@
+<header>
+  <%= render 'layouts/navbar2'%>
+</header>
+
+    <div class="jumbotron jumbotron-fluid border-bottom row align-items-end" id="jumbotron-showuser" >
+      <div class="container-fluid blockquote text-center d-flex justify-content-center">
+        <div class="container rounded" id="userjumb">
+          <div class="container">
+            <h2> Votre profil </h2>
+          </div>
+          <div class="container d-flex justify-content-around my-4">
+            <%if current_user.avatar.attached?%>
+              <%= image_tag current_user.avatar, style: "max-width: 200px", class: "rounded-circle border border-primary" %>
+            <%end%>
+          </div>
+          <div class="container d-flex justify-content-around m-4 p-5">
+            <h3><span class="text-primary">Prénom : </span><%= @user.first_name %></h3>
+            <h3><span class="text-primary">Nom : </span><%= @user.last_name %></h3>
+          </div>
+          <div class="container my-4">
+            <a class="btn btn-primary mb-3" <%= link_to "Editez votre profil", edit_user_registration_path %></a>
+          </div>
+          
+          <div class="container my-4">
+            <p><span class="text-primary">Email : </span><%= @user.email %></p>
+          </div>
+          
+          <div class="container my-4">
+            <h3 class="pb-5"><span class="text-primary"><strong>Vos précedents achats</strong></span></h3>
+
+            <% current_user.carts.each_with_index do |c, index| %>
+           
+            <% if current_user.carts.last != c %>
+            <h4> Commande numero <%= @order[index].id %></h4>
+          <table class="table table-striped shadow-lg p-3 mb-5 bg-white rounded">
+                    <thead>
+                        <tr>
+                            <th scope="col">Produit</th>
+                            <th scope="col">Disponible</th>
+                            <th scope="col" class="text-center">Quantité</th>
+                            <th scope="col" class="text-center">Prix</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <% c.line_items.each do |p| %>
+                        <tr>
+                            <td><%= p.product.title%></td>
+                            <td>In stock</td>
+                            <td><strong><%= p.quantity%></strong></td>
+                            <td><%= p.total%> €</td>
+                        </tr>
+                    <% end %>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td ><strong>Total: <%= c.total%> €</strong></td>
+                        
+                        </tr>
+                    </tbody>
+                </table>
+                <% end %>
+              <br>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<%= render 'layouts/footer'%>

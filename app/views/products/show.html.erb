@@ -1,0 +1,92 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  </head>
+  <body>
+  <%= render 'layouts/navbar2'%>
+    
+    <!-- Tout dans un container -->
+    <div class='container mw-100'>
+      
+        <!-- Molécule image (8 colonnes) + informations (4 colonnes)-->
+        <div class='header mw-100' id="background" style='background-image: url(https://www.leparisien.fr/resizer/74wMQIeXKLDUKuKvSzJQME_0ULg=/932x582/arc-anglerfish-eu-central-1-prod-leparisien.s3.amazonaws.com/public/KNVYKZBDTTOXNO37FEVDTD5DJU.jpg);'>
+          <div class='row px-5'>
+            <div class='col-7 p-5'>
+              <%= image_tag (@img), alt: 'cat-image', style: 'width: 700px; display:block;'%>
+            </div>
+            <div class='tic col-4 p-5 m-4 rounded' style='background-color:white; border: 1px solid #b9bbc9'>
+              <h1> <%= @product.title %> </h1>
+              <h2> <%= @product.price %>€ </h2>
+              <br></br>
+              <a class="btn btn-primary " <%= link_to "Ajouter au panier", line_items_path(product_id: @product.id), method: 'POST' %></a>	
+
+            </div>
+          </div>
+        </div>
+        
+        <!-- Molécule avec des icones, puis un bouton -->
+        <div class='header mw-100' style='background-color: lightgoldenrodyellow;'>
+          <div class='row'>
+            <div class='col p-3'>
+              <a class="ins-ic ml-3 mr-3" role="button"><i class="fab fa-lg fa-instagram"></i></a>
+              <!--Pinterest-->
+              <a class="pin-ic mr-3" role="button"><i class="fab fa-lg fa-pinterest"></i></a>
+              <!--WhatsApp-->
+              <a class="whatsapp-ic" role="button"><i class="fab fa-lg fa-whatsapp"></i></a>
+            </div>
+            <div class='col'></div>
+          </div>
+        </div>
+        
+        
+        <!-- Molécule Description (8 colonnes) + informations (4 colonnes) -->
+        <div class='row px-5'>
+          <div class='col-8 pt-5 px-5'>
+           <h3> Description </h3>
+            <p><%= @product.description %></p>
+            <br>
+           <h3> A propos de la livraison </h3>
+            <p>Chaque création est imprimée avec soin et contrôlée à la main dans nos ateliers, puis livrée à temps quelle que soit l’occasion.
+
+            <p><b>Vous commandez en grandes quantités ? </b> </p> 
+            <p>Consultez nos remises sur les ventes en gros.</p>
+          </div>
+          </div>
+        </div>
+
+        <!-- Molécule icones de réseaux sociaux-->
+        
+          <div class='row px-5 pb-5'>
+            <div class='col-8 pt-5 px-5'>
+              <h5>Partager-la avec vos Amis</h5>
+              <!--Facebook-->
+              <a class="fb-ic mr-3" role="button"><i class="fab fa-lg fa-facebook-f"></i></a>
+              <!--Twitter-->
+              <a class="tw-ic mr-3" role="button"><i class="fab fa-lg fa-twitter"></i></a>
+              <!--Google +-->
+              <a class="gplus-ic mr-3" role="button"><i class="fab fa-lg fa-google-plus-g"></i></a>
+              <!--Instagram-->
+              <a class="ins-ic mr-3" role="button"><i class="fab fa-lg fa-instagram"></i></a>
+              <!--Pinterest-->
+              <a class="pin-ic mr-3" role="button"><i class="fab fa-lg fa-pinterest"></i></a>
+              <!--WhatsApp-->
+              <a class="whatsapp-ic" role="button"><i class="fab fa-lg fa-whatsapp"></i></a>
+            </div>
+            <div class='col-4'></div>
+          </div>
+      </div>
+
+        <!-- Molécule autres produits-->
+
+  </div>
+</body>
+
+
+<%= render 'layouts/footer'%>
+
+</html>

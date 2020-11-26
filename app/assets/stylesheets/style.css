@@ -1,0 +1,70 @@
+/* -----------------Form-------------------- */
+
+
+.paiement {
+  width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto ;
+  margin-bottom: 40px;
+}
+
+
+/* -----------------Form-------------------- */
+
+
+.simple_form {
+  width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto ;
+}
+
+.edit_form {
+  width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto ;
+}
+
+/* -----------------bannière-------------------- */
+
+.big-ban {
+  background-size: cover;
+  background-position-y: center;
+  display: flex;
+  height:400px ;
+  background-image: url(https://www.sciencesetavenir.fr/assets/img/2019/03/25/cover-r4x3w1000-5c98c40f5bf3d-cat-3535399-1920.jpg)
+}
+
+.sm-ban {
+  background-size: cover;
+  background-position-y: center;
+  display: flex;
+  height:300px ;
+  background-image: url(https://www.sciencesetavenir.fr/assets/img/2019/03/25/cover-r4x3w1000-5c98c40f5bf3d-cat-3535399-1920.jpg)
+}
+
+.title-ban {
+  color: white;
+  font-size: 5rem;
+}
+
+/* -----------------Stripe Button-------------------- */
+
+
+.stripe-button-el span {
+  background: rgb(120, 194, 173) !important;
+  background-image:none !important;
+  background-color: rgb(120, 194, 173) !important;
+  border-color: rgb(120, 194, 173) !important;
+  width: 100px !important;
+  height: 50px !important;
+  padding: 10px !important;
+}
+
+
+.stripe-button {
+  content:""
+}
+

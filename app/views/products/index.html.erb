@@ -1,22 +1,32 @@
+<%= render "jumbotron" %>
 
-<div class='container '>
-  <h1>Les Produits</h1>
-  <div class='card-columns ' >
-  <% @products.each do |product|%>		<div class="card text-center d-justify-content-aline">
-    <div class="card-body">
-      <h5 class="card-title">Nom: <%= product.title%></h5>
-      <p class="card-text">
-        <%= product.description%>
-      </p>
-      <a class="btn btn-primary " <%= link_to "Ajouter au panier", line_items_path(product_id: product.id), method: 'POST' %></a>	
-    </div>
-        <div class="card-footer text-muted">
-          <%= product.price %> €
+  <section>
+  
+    <div id="product-all" class="text-center pt-5">
+      <h1 class="p-5" style="font-size: 60px;">Nos photos</h1>
+      <div id="product-align">
+      <% i = 1 %>
+      <% @products.each do |product| %>
+      <div class="card mb-5" id="card-product">
+        <%= image_tag ("chaton#{i}.jpg"), alt: 'cat-image', class: "card-img-top card-img"%>
+        <div class="card-body">
+          <h5 class="card-title">Nom: <%= product.title%></h5>
+          <p class="text-primary"> <%= product.description %></p>
+          <h4 class="card-text text-danger"><%= product.price %> €</h4>
+          <div class="bot-button">
+          <%= link_to "Ajouter au panier", line_items_path(product_id: product.id), method: 'POST', class: "btn btn-secondary" %>
+          <%= link_to "Voir le produit", product_path(product), class: "btn btn-primary mt-3" %>
+          </div>
         </div>
       </div>
-    <% end %> 
+      <% i += 1 %>
+      <% end %>
     </div>
-  </div>
-
-</div>
+      
+    </div>
+    
+  </section>
+  <footer>
+  <%= render 'layouts/footer'%>
+  </footer>
 

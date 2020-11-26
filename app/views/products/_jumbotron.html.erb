@@ -1,0 +1,12 @@
+<div class="container-fluid" id="test">
+  <%= render 'layouts/navbar'%>
+
+  <% flash.each do |name, msg|%>
+    <div class='pos-alert text-center alert alert-<%= name %>'>
+      <%= msg %>
+    </div>
+  <% end %>
+  <%= image_tag 'jumbotron-chat2.png', class: "stick"%>
+  <%= image_tag 'jumbotron-first.png', id: "image-fond1"%>
+</div>
+      

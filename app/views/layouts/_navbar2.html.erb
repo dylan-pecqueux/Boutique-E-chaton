@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" id="navbar">
+  <a class="navbar-brand text-white" href="/"><span class="text-secondary">E</span>-chaton</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse " id="navbarColor03">
+    <ul class="navbar-nav navbar-center">
+      
+    </ul>
+
+
+    <ul class="navbar-nav ml-auto">
+    <% if user_signed_in?%>
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profil/Quitter</a>
+        <div class="dropdown-menu menu-nav" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item menu-nav text-white" <%= link_to "Sign out", destroy_user_session_path, method: :delete %></a>
+          <a class="dropdown-item menu-nav text-white" <%= link_to "Profil", user_path(current_user) %></a>
+        </div>
+      </li>
+      <% if current_user.carts[0] %>
+        <li class="mx-3 pt-2 text-secondary"><%= link_to ('<i class="fas fa-shopping-cart fa-lg"></i>').html_safe, cart_path(current_user.carts.last) ,class:"text-secondary" %></li>
+      <% end %>
+      <% else %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Se Connecter/S'inscrire</a>
+        <div class="dropdown-menu menu-nav" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item menu-nav text-white" href="<%=new_user_session_path%>">Se connecter</a>
+          <a class="dropdown-item menu-nav text-white" href="<%=new_user_registration_path%>">S'inscrire</a>
+        </div>
+    </ul> 
+    <% end %>
+  </div>
+</nav>

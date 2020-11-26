@@ -1,0 +1,35 @@
+#test{
+  min-height: 100vh;
+  background-image: url(asset_path('jumbotron-back.jpg'));
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 0;
+  
+}
+
+.pos-alert{
+  position: sticky;
+  max-width: 100%;
+  z-index: 23;
+  left: 10%;
+  top: 10%;
+}
+
+.stick{
+  position: sticky;
+  max-width: 100%;
+  z-index: 21;
+  left: 22%;
+  top: 15%;
+}
+
+#image-fond1{
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px; left: 0px;
+  object-fit: cover;
+  z-index: 22;
+}

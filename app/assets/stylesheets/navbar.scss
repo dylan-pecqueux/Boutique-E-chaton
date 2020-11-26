@@ -1,0 +1,14 @@
+#navbar{
+  background-color: rgba(120, 194, 173, 0.664);
+  margin: 0;
+}
+
+.menu-nav{
+  background-color: rgba(120, 194, 173, 0.411);
+  border: none;
+}
+
+.fixed-top.scrolled {
+  background-color: rgb(120, 194, 173) !important;
+  transition: background-color 200ms linear;
+}

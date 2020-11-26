@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  <%= render "shared/ban" %>
+    <h1>Hello Good News, Nouvelle commande sur <a href="https://projet-e-chaton-develop.herokuapp.com/users/sign_in">e-chaton.fr </a> </h1>
+    <h3> Récapitulatif de la commande  N° <%= @order.id %> </h3>
+    <h4> Prénom: <%= @first %> </h4>
+    <h4> Nom : <%= @last %> </h4>
+      <div class="table-responsive">
+          <table class="table table-striped">
+              <thead>
+                  <tr>
+                      <th scope="col">Product</th>
+                      <th scope="col">Available</th>
+                      <th scope="col" class="text-center">Quantity</th>
+                      <th scope="col" class="text-right">Price</th>
+                  </tr>
+              </thead>
+              <tbody>
+              <% @cart.line_items.each do |p| %>
+                  <tr>
+                      <td><%= p.product.title%></td>
+                      <td>In stock</td>
+                      <td><%= p.quantity%></td>
+                      <td class="text-right"><%= p.total%> €</td>
+                      <td class="text-right">
+                      </td>
+                  </tr>
+              <% end %>
+              </tbody>
+          </table>
+      </div>
+    </div>
+  </body>
+</html>

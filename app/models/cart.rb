@@ -11,6 +11,12 @@ class Cart < ApplicationRecord
     else
          item = line_items.new(product: product)
     end
+    return item
   end
+
+  def total
+    line_items.to_a.sum(&:total)
+  end 
 end
+
 
