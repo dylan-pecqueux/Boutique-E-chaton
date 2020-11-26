@@ -54,11 +54,13 @@
 
 
 .stripe-button-el span {
-  background: purple !important;
+  background: rgb(120, 194, 173) !important;
   background-image:none !important;
-  background-color: purple !important;
-  border-color: purple !important;
-  padding: 0px
+  background-color: rgb(120, 194, 173) !important;
+  border-color: rgb(120, 194, 173) !important;
+  width: 100px !important;
+  height: 50px !important;
+  padding: 10px !important;
 }
 
 

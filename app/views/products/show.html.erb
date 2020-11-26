@@ -14,12 +14,12 @@
     <div class='container mw-100'>
       
         <!-- Molécule image (8 colonnes) + informations (4 colonnes)-->
-        <div class='header mw-100' style='background-image: url(https://www.leparisien.fr/resizer/74wMQIeXKLDUKuKvSzJQME_0ULg=/932x582/arc-anglerfish-eu-central-1-prod-leparisien.s3.amazonaws.com/public/KNVYKZBDTTOXNO37FEVDTD5DJU.jpg);'>
+        <div class='header mw-100' id="background" style='background-image: url(https://www.leparisien.fr/resizer/74wMQIeXKLDUKuKvSzJQME_0ULg=/932x582/arc-anglerfish-eu-central-1-prod-leparisien.s3.amazonaws.com/public/KNVYKZBDTTOXNO37FEVDTD5DJU.jpg);'>
           <div class='row px-5'>
             <div class='col-7 p-5'>
-              <img src='https://www.leparisien.fr/resizer/74wMQIeXKLDUKuKvSzJQME_0ULg=/932x582/arc-anglerfish-eu-central-1-prod-leparisien.s3.amazonaws.com/public/KNVYKZBDTTOXNO37FEVDTD5DJU.jpg' style='max-width: 100%;max-height:100%;display:block;'>
+              <%= image_tag (@img), alt: 'cat-image', style: 'width: 700px; display:block;'%>
             </div>
-            <div class='tic col-4 p-5 m-4' style='background-color:white; border: 1px solid #b9bbc9'>
+            <div class='tic col-4 p-5 m-4 rounded' style='background-color:white; border: 1px solid #b9bbc9'>
               <h1> <%= @product.title %> </h1>
               <h2> <%= @product.price %>€ </h2>
               <br></br>
@@ -33,7 +33,7 @@
         <div class='header mw-100' style='background-color: lightgoldenrodyellow;'>
           <div class='row'>
             <div class='col p-3'>
-              <a class="ins-ic mr-3" role="button"><i class="fab fa-lg fa-instagram"></i></a>
+              <a class="ins-ic ml-3 mr-3" role="button"><i class="fab fa-lg fa-instagram"></i></a>
               <!--Pinterest-->
               <a class="pin-ic mr-3" role="button"><i class="fab fa-lg fa-pinterest"></i></a>
               <!--WhatsApp-->
