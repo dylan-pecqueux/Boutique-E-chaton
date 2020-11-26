@@ -38,4 +38,21 @@
   font-size: 5rem;
 }
 
+.sm-ban-pay {
+  background-size: cover;
+  background-position-y: center;
+  display: flex;
+  height:450px ;
+  font-size: 25px;
+  background-image: url(Chatons.jpg)
+}
 
+.sm-ban-pay h3{
+  
+  font-size: 62px;
+  color: antiquewhite;
+}
+
+/* .pay-btn{
+  content:"pay with card"
+} */

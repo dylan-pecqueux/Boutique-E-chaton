@@ -13,7 +13,7 @@
     <ul class="navbar-nav ml-auto">
     <% if user_signed_in?%>
       <% if current_user.carts[0] %>
-      <li class="ml-auto p-2 text-secondary"><%= link_to ('<p>votre panier<i class="fas fa-shopping-cart"></i></p>').html_safe, cart_path(current_user.carts[0]) ,class:"text-secondary" %></li>
+      <li class="ml-auto p-2 text-secondary"><%= link_to ('<p><i class="fas fa-shopping-cart fa-lg"></i></p>').html_safe, cart_path(current_user.carts[0]) ,class:"text-secondary" %></li>
       <% end %>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Profil/Quitter</a>
