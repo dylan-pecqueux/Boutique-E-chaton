@@ -23,6 +23,7 @@ class ChargesController < ApplicationController
         description: 'Rails Stripe customer',
         currency: 'eur',
       })
+    
     @order = Order.create(stripe_customer_id: customer.id, user_id: current_user.id) 
    
     
