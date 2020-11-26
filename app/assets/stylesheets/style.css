@@ -50,4 +50,19 @@
   font-size: 5rem;
 }
 
+/* -----------------Stripe Button-------------------- */
+
+
+.stripe-button-el span {
+  background: purple !important;
+  background-image:none !important;
+  background-color: purple !important;
+  border-color: purple !important;
+  padding: 0px
+}
+
+
+.stripe-button {
+  content:""
+}
 
