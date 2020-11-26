@@ -10,13 +10,11 @@ require 'faker'
 
 LineItem.destroy_all
 Cart.destroy_all
-User.destroy_all
 Product.destroy_all
 
 products = []
 lineitems = []
 carts = []
-users = []
 
 ##########################
 # Admin User
@@ -35,19 +33,6 @@ User.create!(
 10.times do
 products << Product.create(title: Faker::Creature::Cat.name, description: Faker::Lorem.paragraph(sentence_count: 3), price: Faker::Commerce.price)
 end
-
-3.times do
-users << User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email, password: Faker::Internet.password)
-end
-
-2.times do
-carts << Cart.create(user: users.sample)
-end
-
-5.times do |index|
-lineitems << LineItem.create(cart: carts.sample, product: products.sample, quantity: rand(1..10))
-end
-
 
 products[0].image.attach(io: File.open('app/assets/images/chaton1.jpg'), filename: 'chaton1.jpg', content_type: 'image/jpg')
 products[1].image.attach(io: File.open('app/assets/images/chaton2.jpg'), filename: 'chaton2.jpg', content_type: 'image/jpg')
