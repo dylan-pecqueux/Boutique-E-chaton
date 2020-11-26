@@ -10,7 +10,6 @@ require 'faker'
 
 LineItem.destroy_all
 Cart.destroy_all
-User.destroy_all
 Product.destroy_all
 
 products = []
