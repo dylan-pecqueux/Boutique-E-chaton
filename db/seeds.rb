@@ -16,6 +16,19 @@ products = []
 lineitems = []
 carts = []
 
+##########################
+# Admin User
+##########################
+
+    User.create!(
+        first_name: "Admin",
+        last_name: "Admin",
+        email: "admin-chaton@yopmail.com",
+        password: 'azerty',
+        is_admin: true
+    )
+
+#################################
 10.times do
 products << Product.create(title: Faker::Creature::Cat.name, description: Faker::Lorem.paragraph(sentence_count: 3), price: Faker::Commerce.price)
 end

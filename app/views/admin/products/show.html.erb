@@ -1,0 +1,41 @@
+<%= render 'sidebar'%>
+    
+    <!-- Tout dans un container -->
+    <div class='container mw-100'>
+      
+        <!-- Molécule image (8 colonnes) + informations (4 colonnes)-->
+        <div class='header mw-100' style='background-image: url(https://www.leparisien.fr/resizer/74wMQIeXKLDUKuKvSzJQME_0ULg=/932x582/arc-anglerfish-eu-central-1-prod-leparisien.s3.amazonaws.com/public/KNVYKZBDTTOXNO37FEVDTD5DJU.jpg);'>
+          <div class='row px-5'>
+            <div class='col-7 p-5'>
+              <img src='https://www.leparisien.fr/resizer/74wMQIeXKLDUKuKvSzJQME_0ULg=/932x582/arc-anglerfish-eu-central-1-prod-leparisien.s3.amazonaws.com/public/KNVYKZBDTTOXNO37FEVDTD5DJU.jpg' style='max-width: 100%;max-height:100%;display:block;'>
+            </div>
+            
+          </div>
+        </div>
+        
+        <!-- Molécule avec des icones, puis un bouton -->
+        <div class='header mw-100' style='background-color: lightgoldenrodyellow;'>
+          <div class='row'>
+            <div class='col'></div>
+          </div>
+        </div>
+        
+        
+        <!-- Molécule Description (8 colonnes) + informations (4 colonnes) -->
+        <div class='row px-5'>
+          <div class='col-8 pt-5 px-5'>
+            <h1>Nom du Produit:</h1>
+            <h3><%= @product.title %></h3>
+            <h1> Description: </h1>
+            <h3><%= @product.description %></h3>
+            <a class="nav-link btn btn-primary" <%= link_to 'Editer le produit', edit_admin_product_path(@product)%></a>
+            <br>
+          </div>
+          </div>
+        </div>
+
+        
+
+        <!-- Molécule autres produits-->
+
+  </div>

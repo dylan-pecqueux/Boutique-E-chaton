@@ -1,0 +1,29 @@
+<%= render 'sidebar' %>
+
+  <section>
+  
+    <div id="product-all" class="text-center pt-5">
+      <h1 class="p-5" style="font-size: 60px;">Nos photos</h1>
+      <div id="product-align">
+      <% i = 1 %>
+      <% @products.each do |product| %>
+      <div class="card mb-5" id="card-product">
+        <%= image_tag ("chaton#{i}.jpg"), alt: 'cat-image', class: "card-img-top card-img"%>
+        <div class="card-body">
+          <h5 class="card-title">Nom: <%= product.title%></h5>
+          <p class="text-primary"> <%= product.description %></p>
+          <h4 class="card-text text-danger"><%= product.price %> €</h4>
+          <div class="bot-button">
+          <%= link_to "Voir le produit", admin_product_path(product), class: "btn btn-primary mt-3" %>
+          <%= link_to "supprimer", admin_product_path(product), method: 'DELETE', class: "btn btn-danger mt-3" %>
+          </div>
+        </div>
+      </div>
+      <% i += 1 %>
+      <% end %>
+      
+    </div>
+      
+    </div>
+    
+  </section>
